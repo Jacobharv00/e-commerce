@@ -17,10 +17,10 @@ const Checkout = ( { cart } ) => {
     const generateToken = async () => {
       try {
         const token = await commerce.checkout.generateToken( cart.id, { type: 'cart' } )
-        console.log( 'TOKEN!!!!!', token )
+        // console.log( 'TOKEN!', token )
         setCheckoutToken( token )
       } catch ( error ) {
-
+        console.log( error )
       }
     }
     generateToken()
