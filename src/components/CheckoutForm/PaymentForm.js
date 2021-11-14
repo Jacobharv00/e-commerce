@@ -7,6 +7,7 @@ import Review from './Review'
 const stripePromise = loadStripe( process.env.REACT_APP_STRIPE_PUBLIC_KEY )
 
 const PaymentForm = ( { checkoutToken, backStep, onCaptureCheckout, nextStep, shippingData } ) => {
+  // console.log( 'PaymentForm shippingData', shippingData )
 
   const handleSubmit = async ( e, elements, stripe ) => {
     e.preventDefault()
@@ -30,7 +31,7 @@ const PaymentForm = ( { checkoutToken, backStep, onCaptureCheckout, nextStep, sh
           name: 'Primary',
           street: shippingData.address1,
           town_city: shippingData.city,
-          county_state: shippingData.shippingSubdivision,
+          county_state: shippingData.shippingSubDivision,
           postal_zip_code: shippingData.zip,
           country: shippingData.shippingCountry
         },
