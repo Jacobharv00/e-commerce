@@ -15,4 +15,15 @@ export default makeStyles( () => ( {
     display: 'flex',
     alignItems: 'center',
   },
+  removeBtn: {
+    color: '#ECEAEC',
+    backgroundColor: '#D36135',
+    borderRadius: '50px',
+    '&:hover': {
+      cursor: 'pointer',
+      borderRadius: '50px',
+      backgroundColor: '#D36135',
+      color: '#000C14',
+    },
+  },
 } ) )

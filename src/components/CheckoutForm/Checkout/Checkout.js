@@ -20,14 +20,15 @@ const Checkout = ( { cart, order, onCaptureCheckout, error } ) => {
     const generateToken = async () => {
       try {
         const token = await commerce.checkout.generateToken( cart.id, { type: 'cart' } )
-        // console.log( 'TOKEN!', token )
         setCheckoutToken( token )
       } catch ( error ) {
-        navigate( '/' )
+        setTimeout( () => {
+          navigate( '/' )
+        }, 15000 )
       }
     }
     generateToken()
-  }, [ cart ] )
+  }, [ cart, navigate ] )
 
   const nextStep = () => setActiveStep( ( prevActiveStep ) => prevActiveStep + 1 )
   const backStep = () => setActiveStep( ( prevActiveStep ) => prevActiveStep - 1 )
@@ -42,7 +43,7 @@ const Checkout = ( { cart, order, onCaptureCheckout, error } ) => {
       <div>
         <Typography variant='h5'>
           Thank you for your purchase,
-          { order.customer.firstname } { order.customer.firstname }
+          { order.customer.firstname } { order.customer.lastname }
         </Typography>
         <Divider className={ classes.divider } />
         <Typography variant='subtitle2'>

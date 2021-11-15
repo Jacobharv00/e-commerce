@@ -4,8 +4,10 @@ const drawerWidth = 0
 
 export default makeStyles( ( theme ) => ( {
   appBar: {
-    boxShadow: 'none',
-    borderBottom: '1px solid rgba(0, 0, 0, 0.12)',
+    boxShadow: '5px',
+    color: '#2D2B2A',
+    backgroundColor: '#F8F8F8',
+    borderBottom: '1px solid rgba(0, 0, 0, 0.3)',
     [ theme.breakpoints.up( 'sm' ) ]: {
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
@@ -25,6 +27,15 @@ export default makeStyles( ( theme ) => ( {
     marginRight: theme.spacing( 2 ),
     [ theme.breakpoints.up( 'sm' ) ]: {
       display: 'none',
+    },
+  },
+  button: {
+    backgroundColor: 'none',
+    '&:hover': {
+      cursor: 'pointer',
+      borderRadius: '50px',
+      backgroundColor: '#5F634F',
+      color: '#FFD447',
     },
   },
   grow: {

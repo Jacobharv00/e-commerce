@@ -4,6 +4,7 @@ import { useForm, FormProvider } from 'react-hook-form'
 import FormInput from './FormInput'
 import { commerce } from '../../lib/commerce'
 import { Link } from 'react-router-dom'
+import useStyles from './styles'
 
 const AddressForm = ( { checkoutToken, next } ) => {
   const [ shippingCountries, setShippingCountries ] = useState( [] )
@@ -14,6 +15,7 @@ const AddressForm = ( { checkoutToken, next } ) => {
   const [ shippingOption, setShippingOption ] = useState( '' )
 
   const methods = useForm()
+  const classes = useStyles()
 
   const countries = Object.entries( shippingCountries ).map( ( [ code, name ] ) => ( { id: code, label: name } ) )
   //console.log( 'AddressForm', countries )
@@ -44,7 +46,7 @@ const AddressForm = ( { checkoutToken, next } ) => {
 
   useEffect( () => {
     fetchShippingCountries( checkoutToken.id )
-  }, [] )
+  }, [ checkoutToken.id ] )
 
   useEffect( () => {
     if ( shippingCountry ) {
@@ -56,7 +58,7 @@ const AddressForm = ( { checkoutToken, next } ) => {
     if ( shippingSubDivision ) {
       fetchShippingOptions( checkoutToken.id, shippingCountry, shippingSubDivision )
     }
-  }, [ shippingSubDivision ] )
+  }, [ shippingSubDivision, checkoutToken.id, shippingCountry ] )
 
   return (
     <>
@@ -115,10 +117,18 @@ const AddressForm = ( { checkoutToken, next } ) => {
             <Button
               component={ Link }
               to='/cart'
-              variant='outlined'>
+              variant='contained'
+              className={ classes.back }
+            >
               Back To Cart
             </Button>
-            <Button type='submit' variant='contained' color='primary'>Next</Button>
+            <Button
+              type='submit'
+              variant='contained'
+              className={ classes.next }
+            >
+              Next
+            </Button>
           </div>
         </form>
       </FormProvider>

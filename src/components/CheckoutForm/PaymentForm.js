@@ -3,11 +3,13 @@ import { Typography, Button, Divider } from '@material-ui/core'
 import { Elements, CardElement, ElementsConsumer } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
 import Review from './Review'
+import useStyles from './styles'
 
 const stripePromise = loadStripe( process.env.REACT_APP_STRIPE_PUBLIC_KEY )
 
 const PaymentForm = ( { checkoutToken, backStep, onCaptureCheckout, nextStep, shippingData } ) => {
   // console.log( 'PaymentForm shippingData', shippingData )
+  const classes = useStyles()
 
   const handleSubmit = async ( e, elements, stripe ) => {
     e.preventDefault()
@@ -63,15 +65,17 @@ const PaymentForm = ( { checkoutToken, backStep, onCaptureCheckout, nextStep, sh
               <br /> <br />
               <div style={ { display: 'flex', justifyContent: 'space-between' } }>
                 <Button
-                  variant='outlined'
+                  className={ classes.back }
+                  variant='contained'
                   onClick={ backStep }>
                   Back
                 </Button>
                 <Button
+                  className={ classes.pay }
                   type='submit'
                   variant='contained'
                   disabled={ !stripe }
-                  color='primary'>
+                >
                   Pay { checkoutToken.live.subtotal.formatted_with_symbol }
                 </Button>
               </div>

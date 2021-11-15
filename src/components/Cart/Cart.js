@@ -9,13 +9,14 @@ const Cart = ( { cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCar
 
   const EmptyCart = () => (
     <Typography variant='h2'>
-      You have no items in your shopping cart.
+      You have no items in your shopping cart.😿
       <Link to='/' className={ classes.link }>
         <Button
           size='medium'
           type='button'
           variant='contained'
-          color='secondary'>
+          className={ classes.emptyButton }
+        >
           Start Adding Some!
         </Button>
       </Link>
@@ -50,7 +51,8 @@ const Cart = ( { cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCar
             size='large'
             type='button'
             variant='contained'
-            color='primary'>
+          // color='primary'
+          >
             Checkout
           </Button>
         </div>
@@ -61,7 +63,7 @@ const Cart = ( { cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCar
   if ( !cart.line_items ) return 'Loading...'
 
   return (
-    <Container>
+    <Container className={ classes.titles }>
       <div className={ classes.toolbar } />
       <Typography className={ classes.title } variant='h1' gutterBottom>
         Shopping Cart
