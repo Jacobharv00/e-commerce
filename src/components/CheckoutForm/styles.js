@@ -2,6 +2,7 @@ import { makeStyles } from '@material-ui/core/styles'
 
 export default makeStyles( () => ( {
   back: {
+    fontWeight: 'bold',
     minWidth: '150px',
     color: '#ECEAEC',
     backgroundColor: '#D36135',
@@ -14,6 +15,7 @@ export default makeStyles( () => ( {
     },
   },
   next: {
+    fontWeight: 'bold',
     minWidth: '150px',
     color: '#ECEAEC',
     backgroundColor: '#74B4BE',
@@ -26,6 +28,7 @@ export default makeStyles( () => ( {
     },
   },
   pay: {
+    fontWeight: 'bold',
     minWidth: '150px',
     color: '#ECEAEC',
     backgroundColor: '#74B4BE',

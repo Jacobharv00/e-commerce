@@ -41,12 +41,12 @@ const Checkout = ( { cart, order, onCaptureCheckout, error } ) => {
   let Confirmation = () => order.customer ? (
     <>
       <div>
-        <Typography variant='h5'>
+        <Typography variant='h5' style={ { fontFamily: 'Merienda, cursive' } }>
           Thank you for your purchase,
           { order.customer.firstname } { order.customer.lastname }
         </Typography>
         <Divider className={ classes.divider } />
-        <Typography variant='subtitle2'>
+        <Typography variant='subtitle2' style={ { fontFamily: 'Merienda, cursive' } }>
           Order Ref: { order.customer_reference }
         </Typography>
       </div>
@@ -97,7 +97,7 @@ const Checkout = ( { cart, order, onCaptureCheckout, error } ) => {
       <div className={ classes.toolbar } />
       <main className={ classes.layout }>
         <Paper className={ classes.paper }>
-          <Typography variant='h4' align='center'>
+          <Typography variant='h4' align='center' style={ { fontFamily: 'Merienda, cursive', } }>
             Checkout
           </Typography>
           <Stepper activeStep={ activeStep } className={ classes.stepper }>

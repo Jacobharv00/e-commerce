@@ -18,7 +18,11 @@ export default makeStyles( ( theme ) => ( {
     alignItems: 'center',
     display: 'flex',
     textDecoration: 'none',
-    fontSize: '1.5rem',
+    fontSize: '2.5rem',
+    fontFamily: 'Merienda, cursive',
+    '&:hover': {
+      color: '#D36135',
+    },
   },
   image: {
     marginRight: '10px',

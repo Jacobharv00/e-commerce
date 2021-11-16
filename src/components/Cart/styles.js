@@ -6,11 +6,15 @@ export default makeStyles( ( theme ) => ( {
     marginTop: '5%',
     fontWeight: '500',
     color: '#000C14',
+    fontFamily: 'Merienda, cursive',
   },
   titles: {
     color: '#000C14',
   },
   emptyButton: {
+    marginBottom: '5px',
+    fontWeight: 'bold',
+    padding: '10px',
     minWidth: '150px',
     color: '#ECEAEC',
     backgroundColor: '#D36135',
@@ -29,6 +33,9 @@ export default makeStyles( ( theme ) => ( {
     },
   },
   checkoutButton: {
+    fontWeight: 'bold',
+    padding: '10px',
+    marginBottom: '5px',
     minWidth: '150px',
     color: '#ECEAEC',
     backgroundColor: '#74B4BE',
@@ -42,6 +49,8 @@ export default makeStyles( ( theme ) => ( {
   },
   link: {
     textDecoration: 'none',
+    display: 'flex',
+    marginTop: '10px',
   },
   cardDetails: {
     display: 'flex',

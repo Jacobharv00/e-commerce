@@ -8,7 +8,7 @@ const Cart = ( { cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCar
   const classes = useStyles()
 
   const EmptyCart = () => (
-    <Typography variant='h2'>
+    <Typography variant='h2' style={ { fontFamily: 'Merienda, cursive' } }>
       You have no items in your shopping cart.😿
       <Link to='/' className={ classes.link }>
         <Button
@@ -37,7 +37,7 @@ const Cart = ( { cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCar
         ) ) }
       </Grid>
       <div className={ classes.cardDetails }>
-        <Typography variant='h4'>
+        <Typography variant='h4' style={ { fontFamily: 'Merienda, cursive', } }>
           Subtotal: { cart.subtotal.formatted_with_symbol }
         </Typography>
         <div>
@@ -51,7 +51,6 @@ const Cart = ( { cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCar
             size='large'
             type='button'
             variant='contained'
-          // color='primary'
           >
             Checkout
           </Button>

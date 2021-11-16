@@ -15,10 +15,10 @@ const Product = ( { product, onAddToCart } ) => {
       />
       <CardContent>
         <div className={ classes.cardContent }>
-          <Typography variant='h5' gutterBottom>
+          <Typography variant='h4' gutterBottom style={ { fontFamily: 'Merienda, cursive', } }>
             { product.name }
           </Typography>
-          <Typography variant='h5'>
+          <Typography variant='h5' style={ { fontFamily: 'Merienda, cursive', } }>
             { product.price.formatted_with_symbol }
           </Typography>
         </div>

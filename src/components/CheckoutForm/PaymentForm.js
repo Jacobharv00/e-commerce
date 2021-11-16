@@ -54,7 +54,7 @@ const PaymentForm = ( { checkoutToken, backStep, onCaptureCheckout, nextStep, sh
     <>
       <Review checkoutToken={ checkoutToken } />
       <Divider />
-      <Typography variant='h6' gutterBottom style={ { margin: '20px 0' } }>
+      <Typography variant='h6' gutterBottom style={ { margin: '20px 0', fontFamily: 'Merienda, cursive', } }>
         Payment Method
       </Typography>
       <Elements stripe={ stripePromise }>
