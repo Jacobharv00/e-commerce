@@ -6,9 +6,9 @@ export default makeStyles( () => ( {
     borderRadius: '20px',
   },
   media: {
+    imageRendering: 'auto',
     height: 0,
     paddingTop: '56.25%', // 16:9
-
   },
   cardActions: {
     display: 'flex',

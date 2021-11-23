@@ -10,8 +10,11 @@ const App = () => {
   const [ order, setOrder ] = useState( {} )
   const [ errorMessage, setErrorMessage ] = useState( '' )
 
+
   const fetchProducts = async () => {
-    const { data } = await commerce.products.list()
+    //const { data } = await commerce.products.list() Default 20 items
+    // Sets items limit to 150, max is 200
+    const { data } = await commerce.products.list( { limit: 150 } )
     setProducts( data )
   }
 
@@ -58,9 +61,6 @@ const App = () => {
     fetchProducts()
     fetchCart()
   }, [] )
-
-  // console.log('PRODUCTS', products )
-  // console.log( 'CART', cart )
 
 
   return (
