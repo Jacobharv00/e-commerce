@@ -8,7 +8,7 @@
   
    > Have you been looking for a e-commerce store that sells the hottest and sleekest products? Look no futher E-Boss is a e-commerce store where you can find everything you need to get your developer office all set up so you can start making those fancy instagram posts! Vist the homepage and start shopping and if there is something you are interested in buying but don't see on the website email me and I can start stocking that product! 
 
-### 🏠 [Homepage](COMING SOON!)
+### 🏠 [Homepage](https://eboss.netlify.app) 🏠
   
 [![Screen-Shot-2021-11-24-at-4-08-12-PM.png](https://i.postimg.cc/B6Q6V7LZ/Screen-Shot-2021-11-24-at-4-08-12-PM.png)](https://postimg.cc/yJtsJPy2)
 
