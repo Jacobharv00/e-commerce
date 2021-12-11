@@ -8,7 +8,7 @@
   <img src="https://media.giphy.com/media/5wG597QP1fjG7xIfte/giphy.gif" alt="shopping cat"/>
 <p>
   
-   > Have you been looking for a e-commerce store that sells the hottest and sleekest products? Look no further E-Boss is a e-commerce store where you can find everything you need to get your developer office all set up so you can start making those fancy instagram posts! Vist the homepage and start shopping and if there is something you are interested in buying but don't see on the website email me and I can start stocking that product! 
+   > Have you been looking for a e-commerce store that sells the hottest and sleekest products? Look no further E-Boss is a e-commerce store where you can find everything you need to get your developer office all set up so you can start making those fancy instagram posts! Visit the homepage and start shopping and if there is something you are interested in buying but don't see on the website email me and I can start stocking that product! 
 
 ### 🏠 [Homepage](https://eboss.netlify.app) 🏠
   
