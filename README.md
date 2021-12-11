@@ -21,6 +21,7 @@
   <li>React</li>
   <li>react-router-dom</li>
   <li>react-hook-form</li>
+  <li>commerce.js</li>
   <li>react-stripe.js</li>
   <li>stripe.js</li>
   <li>Material-UI</li>
