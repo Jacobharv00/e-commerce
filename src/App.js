@@ -3,13 +3,11 @@ import { Products, Navbar, Cart, Checkout } from './components'
 import { commerce } from './lib/commerce'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-
 const App = () => {
   const [ products, setProducts ] = useState( [] )
   const [ cart, setCart ] = useState( {} )
   const [ order, setOrder ] = useState( {} )
   const [ errorMessage, setErrorMessage ] = useState( '' )
-
 
   const fetchProducts = async () => {
     //const { data } = await commerce.products.list() Default 20 items
