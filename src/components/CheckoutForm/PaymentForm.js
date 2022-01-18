@@ -8,7 +8,6 @@ import useStyles from './styles'
 const stripePromise = loadStripe( process.env.REACT_APP_STRIPE_PUBLIC_KEY )
 
 const PaymentForm = ( { checkoutToken, backStep, onCaptureCheckout, nextStep, shippingData } ) => {
-  // console.log( 'PaymentForm shippingData', shippingData )
   const classes = useStyles()
 
   const handleSubmit = async ( e, elements, stripe ) => {

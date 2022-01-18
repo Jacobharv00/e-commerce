@@ -18,7 +18,6 @@ const AddressForm = ( { checkoutToken, next } ) => {
   const classes = useStyles()
 
   const countries = Object.entries( shippingCountries ).map( ( [ code, name ] ) => ( { id: code, label: name } ) )
-  //console.log( 'AddressForm', countries )
 
   const subdivisions = Object.entries( shippingSubDivisions ).map( ( [ code, name ] ) => ( { id: code, label: name } ) )
 
@@ -27,7 +26,6 @@ const AddressForm = ( { checkoutToken, next } ) => {
 
   const fetchShippingCountries = async ( checkoutTokenId ) => {
     const { countries } = await commerce.services.localeListShippingCountries( checkoutTokenId )
-    // console.log( 'Inside fetchShippingCountries', countries )
     setShippingCountries( countries )
     setShippingCountry( Object.keys( countries )[ 0 ] )
   }
