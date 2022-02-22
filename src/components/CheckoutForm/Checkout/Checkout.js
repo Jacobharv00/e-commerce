@@ -16,6 +16,9 @@ const Checkout = ( { cart, order, onCaptureCheckout, error } ) => {
   const classes = useStyles()
   const navigate = useNavigate()
 
+  const nextStep = () => setActiveStep( ( prevActiveStep ) => prevActiveStep + 1 )
+  const backStep = () => setActiveStep( ( prevActiveStep ) => prevActiveStep - 1 )
+
   useEffect( () => {
     const generateToken = async () => {
       try {
@@ -24,14 +27,11 @@ const Checkout = ( { cart, order, onCaptureCheckout, error } ) => {
       } catch ( error ) {
         setTimeout( () => {
           navigate( '/' )
-        }, 15000 )
+        }, 3000 )
       }
     }
     generateToken()
   }, [ cart, navigate ] )
-
-  const nextStep = () => setActiveStep( ( prevActiveStep ) => prevActiveStep + 1 )
-  const backStep = () => setActiveStep( ( prevActiveStep ) => prevActiveStep - 1 )
 
   const next = ( data ) => {
     setShippingData( data )
@@ -67,29 +67,34 @@ const Checkout = ( { cart, order, onCaptureCheckout, error } ) => {
   )
 
   if ( error ) {
-    <>
-      <Typography variant='h5'>Error: { error }</Typography>
-      <br />
-      <Button
-        variant='outlined'
-        type='button'
-        component={ Link }
-        to='/'
-      >
-        Back To Home
-      </Button>
-    </>
+    Confirmation = () => (
+      <>
+        <Typography variant='h5'>Error: { error }</Typography>
+        <br />
+        <Button
+          variant='outlined'
+          type='button'
+          component={ Link }
+          to='/'
+        >
+          Back To Home
+        </Button>
+      </>
+    )
   }
 
-  const Form = () => activeStep === 0
-    ? <AddressForm checkoutToken={ checkoutToken } next={ next } />
+  const Form = () => ( activeStep === 0
+    ? <AddressForm
+      checkoutToken={ checkoutToken }
+      next={ next }
+    />
     : <PaymentForm
       shippingData={ shippingData }
       checkoutToken={ checkoutToken }
       backStep={ backStep }
       nextStep={ nextStep }
       onCaptureCheckout={ onCaptureCheckout }
-    />
+    /> )
 
   return (
     <>

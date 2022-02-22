@@ -19,7 +19,7 @@ const PaymentForm = ( { checkoutToken, backStep, onCaptureCheckout, nextStep, sh
     const { error, paymentMethod } = await stripe.createPaymentMethod( { type: 'card', card: cardElement } )
 
     if ( error ) {
-      console.log( error )
+      console.log( '[error]', error )
     } else {
       const orderData = {
         line_items: checkoutToken.live.line_items,
@@ -38,11 +38,11 @@ const PaymentForm = ( { checkoutToken, backStep, onCaptureCheckout, nextStep, sh
         },
         fulfillment: { shipping_method: shippingData.shippingOption },
         payment: {
-          gateway: 'stripe',
+          gateway: "stripe",
           stripe: {
             payment_method_id: paymentMethod.id
-          }
-        }
+          },
+        },
       }
       onCaptureCheckout( checkoutToken.id, orderData )
       nextStep()
@@ -57,29 +57,28 @@ const PaymentForm = ( { checkoutToken, backStep, onCaptureCheckout, nextStep, sh
         Payment Method
       </Typography>
       <Elements stripe={ stripePromise }>
-        <ElementsConsumer>
-          { ( { elements, stripe } ) => (
-            <form onSubmit={ ( e ) => handleSubmit( e, elements, stripe ) }>
-              <CardElement />
-              <br /> <br />
-              <div style={ { display: 'flex', justifyContent: 'space-between' } }>
-                <Button
-                  className={ classes.back }
-                  variant='contained'
-                  onClick={ backStep }>
-                  Back
-                </Button>
-                <Button
-                  className={ classes.pay }
-                  type='submit'
-                  variant='contained'
-                  disabled={ !stripe }
-                >
-                  Pay { checkoutToken.live.subtotal.formatted_with_symbol }
-                </Button>
-              </div>
-            </form>
-          ) }
+        <ElementsConsumer>{ ( { elements, stripe } ) => (
+          <form onSubmit={ ( e ) => handleSubmit( e, elements, stripe ) }>
+            <CardElement />
+            <br /> <br />
+            <div style={ { display: 'flex', justifyContent: 'space-between' } }>
+              <Button
+                className={ classes.back }
+                variant='contained'
+                onClick={ backStep }>
+                Back
+              </Button>
+              <Button
+                className={ classes.pay }
+                type='submit'
+                variant='contained'
+                disabled={ !stripe }
+              >
+                Pay { checkoutToken.live.subtotal.formatted_with_symbol }
+              </Button>
+            </div>
+          </form>
+        ) }
         </ElementsConsumer>
       </Elements>
     </>
